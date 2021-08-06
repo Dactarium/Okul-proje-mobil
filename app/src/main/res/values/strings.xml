@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Sipariş Uygulaması</string>
+    <string name="singup_text">Hesabınız yok mu? <b>Kayıt ol!</b></string>
 </resources>
