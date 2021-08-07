@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="black">#FF000000</color>
+    <color name="black_10">#1A000000</color>
     <color name="white">#FFFFFFFF</color>
     <!-- custom color -->
+    <color name="primary_color">#FFBE3B</color>
     <color name="text_color">#4E3634</color>
     <color name="error_color">#A83030</color>
     <color name="hint_text_color">#804E3634</color>
     <color name="button_color">#FFEB3B</color>
+    <color name="button_color_press">#ECD51B</color>
 </resources>

@@ -45,7 +45,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/input_email"
+            android:id="@+id/input_signin_email"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
@@ -61,7 +61,7 @@
             app:layout_constraintTop_toBottomOf="@+id/text_signin_info" />
 
         <EditText
-            android:id="@+id/input_password"
+            android:id="@+id/input_signin_password"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
@@ -74,10 +74,10 @@
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/input_email" />
+            app:layout_constraintTop_toBottomOf="@+id/input_signin_email" />
 
         <TextView
-            android:id="@+id/forgotPassword_text"
+            android:id="@+id/text_forgotPassword"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -87,24 +87,24 @@
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/input_password" />
+            app:layout_constraintTop_toBottomOf="@+id/input_signin_password" />
 
         <Button
             android:id="@+id/button_signin"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
-            android:background="@color/button_color"
+            android:layout_marginTop="75dp"
+            android:background="@drawable/button"
             android:text="Giriş Yap"
             android:textAllCaps="false"
             android:textColor="@color/text_color"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/forgotPassword_text" />
+            app:layout_constraintTop_toBottomOf="@+id/text_forgotPassword" />
 
         <TextView
-            android:id="@+id/signup_text"
+            android:id="@+id/text_signup"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
@@ -115,6 +115,168 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/button_signin" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/signup"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="85dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="75dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_title"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/text_signin_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:padding="5dp"
+            android:text="Giriş yap"
+            android:textAlignment="center"
+            android:textColor="@color/text_color"
+            app:layout_constraintEnd_toStartOf="@+id/text_signup_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_signup_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bottom_line"
+            android:fontFamily="sans-serif-black"
+            android:padding="5dp"
+            android:text="Kayıt Ol"
+            android:textAlignment="center"
+            android:textColor="@color/text_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/text_signin_title"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/input_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:backgroundTint="@color/text_color"
+            android:ems="10"
+            android:hint="İsminizi giriniz."
+            android:inputType="textPersonName"
+            android:textColor="@color/text_color"
+            android:textColorHint="@color/hint_text_color"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_signup_title" />
+
+        <EditText
+            android:id="@+id/input_surname"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/text_color"
+            android:ems="10"
+            android:hint="Soyisminizi giriniz."
+            android:inputType="textPersonName"
+            android:textColor="@color/text_color"
+            android:textColorHint="@color/hint_text_color"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input_name" />
+
+        <EditText
+            android:id="@+id/input_signup_email"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/text_color"
+            android:ems="10"
+            android:hint="E-posta adresinizi giriniz."
+            android:inputType="textEmailAddress"
+            android:textColor="@color/text_color"
+            android:textColorHint="@color/hint_text_color"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input_surname" />
+
+        <TextView
+            android:id="@+id/text_signup_email_info"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="*Geçerli bir mail adresi giriniz."
+            android:textAlignment="textEnd"
+            android:textColor="@color/error_color"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input_signup_email" />
+
+        <TextView
+            android:id="@+id/text_signup_email_info2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="*En az 6 karakter ve rakam içermelidir."
+            android:textAlignment="textEnd"
+            android:textColor="@color/error_color"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input_signup_password" />
+
+        <EditText
+            android:id="@+id/input_signup_password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:backgroundTint="@color/text_color"
+            android:ems="10"
+            android:hint="Şifre giriniz."
+            android:inputType="textPassword"
+            android:textColor="@color/text_color"
+            android:textColorHint="@color/hint_text_color"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/button_show_password"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_signup_email_info" />
+
+        <ImageButton
+            android:id="@+id/button_show_password"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:background="?android:attr/panelBackground"
+            app:layout_constraintBottom_toBottomOf="@+id/input_signup_password"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/input_signup_password"
+            app:srcCompat="@drawable/ic_eye" />
+
+        <Button
+            android:id="@+id/button_signup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="75dp"
+            android:background="@drawable/button"
+            android:text="Kayıt Ol"
+            android:textAllCaps="false"
+            android:textColor="@color/text_color"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input_signup_password" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
