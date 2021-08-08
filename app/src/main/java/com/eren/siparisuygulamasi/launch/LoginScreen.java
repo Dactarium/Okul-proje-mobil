@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.eren.siparisuygulamasi.Mainmenu;
+import com.eren.siparisuygulamasi.ready.Mainmenu;
 import com.eren.siparisuygulamasi.R;
 
 public class LoginScreen extends AppCompatActivity {

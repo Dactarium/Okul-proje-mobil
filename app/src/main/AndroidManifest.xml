@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SiparişUygulaması">
-        <activity android:name=".Mainmenu"></activity>
+        <activity android:name=".accessed.CurrentOrders"></activity>
+        <activity android:name=".ready.OrderHistory" />
+        <activity android:name=".ready.Mainmenu" />
         <activity android:name=".launch.LoginScreen" />
         <activity android:name=".launch.LaunchScreen">
             <intent-filter>
@@ -18,7 +20,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>
