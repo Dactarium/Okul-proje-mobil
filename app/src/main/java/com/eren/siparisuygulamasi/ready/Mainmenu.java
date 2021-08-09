@@ -10,7 +10,7 @@ import android.widget.ImageButton;
 import android.widget.PopupMenu;
 
 import com.eren.siparisuygulamasi.R;
-import com.eren.siparisuygulamasi.accessed.CurrentOrders;
+import com.eren.siparisuygulamasi.accessed.InRestaurant;
 
 public class Mainmenu extends AppCompatActivity {
 
@@ -56,7 +56,7 @@ public class Mainmenu extends AppCompatActivity {
         scan_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), CurrentOrders.class));
+                startActivity(new Intent(getApplicationContext(), InRestaurant.class));
             }
         });
     }

@@ -15,5 +15,14 @@
         <item name="android:textCursorDrawable">@drawable/placeholder</item>
     </style>
 
+    <style name="Theme.SiparişUygulaması.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.SiparişUygulaması.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.SiparişUygulaması.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
 
 </resources>

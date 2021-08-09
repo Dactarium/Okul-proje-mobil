@@ -7,18 +7,6 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/text_access_code"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="15dp"
-        android:fontFamily="sans-serif-light"
-        android:text="Access Code"
-        android:textColor="@color/text_color"
-        app:layout_constraintStart_toStartOf="@+id/info"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
         android:id="@+id/text_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -41,7 +29,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_access_code">
+        app:layout_constraintTop_toBottomOf="@+id/text_date">
 
         <TextView
             android:id="@+id/text_name"

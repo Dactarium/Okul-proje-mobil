@@ -11,12 +11,12 @@ import com.eren.siparisuygulamasi.items.order.OrderAdapter;
 
 import java.util.ArrayList;
 
-public class CurrentOrders extends AppCompatActivity {
+public class Orders extends AppCompatActivity {
     ListView order_list;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_current_orders);
+        setContentView(R.layout.activity_orders);
 
         order_list = (ListView) findViewById(R.id.list_current_orders);
 

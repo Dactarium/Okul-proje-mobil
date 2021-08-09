@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".accessed.InRestaurant">
+
+    <TextView
+        android:id="@+id/text_restaurant_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:text="Restaurant Name"
+        android:textColor="@color/text_color"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_order_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25dp"
+        android:fontFamily="sans-serif-light"
+        android:text="Order Code"
+        android:textColor="@color/text_color"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ListView
+        android:id="@+id/list_category"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:divider="@null"
+        android:listSelector="@android:color/transparent"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/button_bill"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_order_code" />
+
+    <ListView
+        android:id="@+id/list_menu"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="25dp"
+        android:divider="@null"
+        android:listSelector="@android:color/transparent"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/button_bill"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_order_code">
+
+    </ListView>
+
+    <View
+        android:id="@+id/background_total"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/box_right"
+        app:layout_constraintBottom_toBottomOf="@+id/text_currency"
+        app:layout_constraintEnd_toEndOf="@+id/text_currency"
+        app:layout_constraintStart_toStartOf="@+id/button_bill"
+        app:layout_constraintTop_toTopOf="@+id/text_currency" />
+
+    <TextView
+        android:id="@+id/text_currency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:fontFamily="sans-serif-medium"
+        android:paddingTop="5dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="5dp"
+        android:text="@string/currency"
+        android:textColor="@color/text_color"
+        app:layout_constraintBottom_toBottomOf="@+id/button_bill"
+        app:layout_constraintStart_toEndOf="@+id/text_total"
+        app:layout_constraintTop_toTopOf="@+id/button_bill" />
+
+    <TextView
+        android:id="@+id/text_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:fontFamily="sans-serif-light"
+        android:text="0"
+        android:textColor="@color/text_color"
+        app:layout_constraintBottom_toBottomOf="@+id/text_currency"
+        app:layout_constraintStart_toEndOf="@+id/button_bill"
+        app:layout_constraintTop_toTopOf="@+id/text_currency" />
+
+    <ImageButton
+        android:id="@+id/button_bill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/button"
+        android:padding="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_wallet" />
+
+    <View
+        android:id="@+id/background_cart_total"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/box_left"
+        app:layout_constraintBottom_toBottomOf="@+id/text_cart_currency"
+        app:layout_constraintEnd_toEndOf="@+id/button_cart"
+        app:layout_constraintStart_toStartOf="@+id/text_cart_total"
+        app:layout_constraintTop_toTopOf="@+id/text_cart_currency" />
+
+    <TextView
+        android:id="@+id/text_cart_currency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:fontFamily="sans-serif-medium"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:text="@string/currency"
+        android:textColor="@color/text_color"
+        app:layout_constraintBottom_toBottomOf="@+id/button_cart"
+        app:layout_constraintEnd_toStartOf="@+id/button_cart"
+        app:layout_constraintTop_toTopOf="@+id/button_cart" />
+
+    <TextView
+        android:id="@+id/text_cart_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:paddingLeft="10dp"
+        android:text="0"
+        android:textColor="@color/text_color"
+        app:layout_constraintBottom_toBottomOf="@+id/text_cart_currency"
+        app:layout_constraintEnd_toStartOf="@+id/text_cart_currency"
+        app:layout_constraintTop_toTopOf="@+id/text_cart_currency" />
+
+    <ImageButton
+        android:id="@+id/button_cart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/button"
+        android:padding="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_cart" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

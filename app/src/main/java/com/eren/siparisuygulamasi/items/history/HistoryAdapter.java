@@ -8,7 +8,6 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.eren.siparisuygulamasi.R;
-import com.eren.siparisuygulamasi.items.history.History;
 
 import java.util.ArrayList;
 
@@ -24,12 +23,10 @@ public class HistoryAdapter extends ArrayAdapter<History> {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_history, parent, false);
         }
 
-        TextView access_code_text = (TextView) convertView.findViewById(R.id.text_access_code);
         TextView date_text = (TextView) convertView.findViewById(R.id.text_date);
         TextView name_text = (TextView) convertView.findViewById(R.id.text_name);
         TextView total_text = (TextView) convertView.findViewById(R.id.text_total);
 
-        access_code_text.setText(history.access_code);
         date_text.setText(history.date);
         name_text.setText(history.name);
         total_text.setText(Float.toString(history.total));

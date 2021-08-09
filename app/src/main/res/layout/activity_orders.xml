@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".accessed.CurrentOrders">
+    tools:context=".accessed.Orders">
 
     <TextView
         android:id="@+id/text_order_code"
@@ -12,14 +12,14 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:fontFamily="sans-serif-light"
-        android:text="#12345"
+        android:text="Order Code"
         android:textColor="@color/text_color"
         app:layout_constraintBottom_toBottomOf="@+id/text_currency"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/text_currency" />
 
     <View
-        android:id="@+id/background_total"
+        android:id="@+id/background_cart_total"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/box_top"
@@ -33,7 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="5dp"
-        android:paddingLeft="10dp"
+        android:paddingLeft="15dp"
         android:text="0"
         android:textColor="@color/text_color"
         android:textSize="18sp"
@@ -48,7 +48,9 @@
         android:layout_marginTop="25dp"
         android:layout_marginEnd="20dp"
         android:fontFamily="sans-serif-medium"
-        android:paddingRight="10dp"
+        android:paddingTop="5dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="5dp"
         android:text="TL"
         android:textColor="@color/text_color"
         android:textSize="18sp"
@@ -59,9 +61,27 @@
         android:id="@+id/list_current_orders"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="15dp"
+        android:divider="@null"
+        android:listSelector="@android:color/transparent"
+        app:layout_constraintBottom_toTopOf="@+id/button_bitir"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_currency" />
+
+    <Button
+        android:id="@+id/button_bitir"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/button"
+        android:text="Bitir"
+        android:textAllCaps="false"
+        android:textColor="@color/text_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
