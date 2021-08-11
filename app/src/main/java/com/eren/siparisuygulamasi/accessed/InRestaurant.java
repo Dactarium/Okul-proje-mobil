@@ -42,7 +42,16 @@ public class InRestaurant extends AppCompatActivity {
             }
         });
 
+        cart_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), Cart.class));
+            }
+        });
+
         ArrayList<Category> categories = new ArrayList<Category>();
+        categories.add(new Category("Category"));
+        categories.add(new Category("Category"));
         categories.add(new Category("Category"));
         categories.add(new Category("Category"));
         categories.add(new Category("Category"));

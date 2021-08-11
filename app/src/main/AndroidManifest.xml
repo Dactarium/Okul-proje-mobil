@@ -9,6 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SiparişUygulaması">
+        <activity android:name=".ready.WaitForAccess"></activity>
+        <activity android:name=".ready.Scan" />
+        <activity android:name=".accessed.Cart" />
         <activity android:name=".accessed.InRestaurant" />
         <activity android:name=".accessed.Orders" />
         <activity android:name=".ready.OrderHistory" />

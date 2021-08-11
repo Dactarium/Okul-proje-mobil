@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".accessed.Orders">
+    tools:context=".accessed.Cart">
 
     <TextView
         android:id="@+id/text_order_code"
@@ -19,17 +19,17 @@
         app:layout_constraintTop_toTopOf="@+id/text_currency" />
 
     <View
-        android:id="@+id/background_total"
+        android:id="@+id/background_cart_total"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/box_top"
         app:layout_constraintBottom_toBottomOf="@+id/text_currency"
         app:layout_constraintEnd_toEndOf="@+id/text_currency"
-        app:layout_constraintStart_toStartOf="@+id/text_total"
+        app:layout_constraintStart_toStartOf="@+id/text_cart_total"
         app:layout_constraintTop_toTopOf="@+id/text_currency" />
 
     <TextView
-        android:id="@+id/text_total"
+        android:id="@+id/text_cart_total"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="5dp"
@@ -58,30 +58,31 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
-        android:id="@+id/list_current_orders"
+        android:id="@+id/list_cart_orders"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="15dp"
         android:divider="@null"
         android:listSelector="@android:color/transparent"
-        app:layout_constraintBottom_toTopOf="@+id/button_leave"
+        app:layout_constraintBottom_toTopOf="@+id/button_order"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_currency" />
 
     <Button
-        android:id="@+id/button_leave"
+        android:id="@+id/button_order"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="15dp"
         android:background="@drawable/button"
-        android:text="Bitir"
+        android:text="Sipariş Ver"
         android:textAllCaps="false"
         android:textColor="@color/text_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

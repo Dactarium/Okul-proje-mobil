@@ -2,4 +2,6 @@
     <string name="app_name">Sipariş Uygulaması</string>
     <string name="singup_text">Hesabınız yok mu? <b>Kayıt ol!</b></string>
     <string name="currency">TL</string>
+    <string name="wait_for_access">Restoran tarafından onay bekleniyor...</string>
+    <string name="order_code_share_info">Restoran tarafından onaylanmak için bu kodu garson ile paylaşınız!</string>
 </resources>

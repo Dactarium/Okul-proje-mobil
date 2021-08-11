@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -9,17 +10,19 @@
         android:id="@+id/img_menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
+        android:layout_marginStart="15dp"
+        android:padding="5dp"
         app:layout_constraintBottom_toBottomOf="@+id/text_menu_name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/text_menu_name"
-        app:srcCompat="@drawable/ic_restaurant" />
+        app:srcCompat="@drawable/ic_restaurant"
+        app:tint="@color/primary_color" />
 
     <TextView
         android:id="@+id/text_menu_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="25dp"
         android:layout_marginBottom="25dp"
         android:fontFamily="sans-serif-light"
@@ -33,16 +36,16 @@
         android:id="@+id/text_currency"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="25dp"
+        android:layout_marginEnd="15dp"
         android:fontFamily="sans-serif-medium"
         android:text="@string/currency"
         android:textColor="@color/text_color"
         app:layout_constraintBottom_toBottomOf="@+id/text_menu_name"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton"
+        app:layout_constraintEnd_toStartOf="@+id/button_remove"
         app:layout_constraintTop_toTopOf="@+id/text_menu_name" />
 
     <TextView
-        android:id="@+id/text_price"
+        android:id="@+id/text_subtotal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="5dp"
@@ -54,14 +57,31 @@
         app:layout_constraintTop_toTopOf="@+id/text_currency" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/button_remove"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="25dp"
+        android:layout_marginEnd="15dp"
         android:background="@drawable/button"
-        android:padding="5dp"
+        android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="@+id/text_menu_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/text_menu_name"
-        app:srcCompat="@drawable/ic_add" />
+        app:srcCompat="@drawable/ic_x"
+        app:tint="@color/error_color" />
+
+    <Button
+        android:id="@+id/button_amount"
+        android:layout_width="50dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="60dp"
+        android:background="@drawable/button"
+        android:fontFamily="sans-serif-light"
+        android:text="0"
+        android:textAllCaps="false"
+        android:textColor="@color/text_color"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/img_menu"
+        app:layout_constraintEnd_toStartOf="@+id/text_currency"
+        app:layout_constraintTop_toTopOf="@+id/img_menu" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
