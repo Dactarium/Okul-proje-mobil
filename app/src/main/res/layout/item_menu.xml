@@ -38,7 +38,7 @@
         android:text="@string/currency"
         android:textColor="@color/text_color"
         app:layout_constraintBottom_toBottomOf="@+id/text_menu_name"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton"
+        app:layout_constraintEnd_toStartOf="@+id/button_add_menu"
         app:layout_constraintTop_toTopOf="@+id/text_menu_name" />
 
     <TextView
@@ -54,14 +54,14 @@
         app:layout_constraintTop_toTopOf="@+id/text_currency" />
 
     <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/button_add_menu"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginEnd="25dp"
         android:background="@drawable/button"
         android:padding="5dp"
-        app:layout_constraintBottom_toBottomOf="@+id/text_menu_name"
+        app:layout_constraintBottom_toBottomOf="@+id/img_menu"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/text_menu_name"
+        app:layout_constraintTop_toTopOf="@+id/img_menu"
         app:srcCompat="@drawable/ic_add" />
 </androidx.constraintlayout.widget.ConstraintLayout>

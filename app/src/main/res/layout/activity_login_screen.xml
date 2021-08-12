@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".launch.LoginScreen">
+    tools:context=".launch.SigninScreen">
 
     <TextView
         android:id="@+id/login_title"
@@ -223,19 +223,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/input_signup_email" />
 
-        <TextView
-            android:id="@+id/text_signup_email_info2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="*En az 6 karakter ve rakam içermelidir."
-            android:textAlignment="textEnd"
-            android:textColor="@color/error_color"
-            android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/input_signup_password" />
-
         <EditText
             android:id="@+id/input_signup_password"
             android:layout_width="0dp"
@@ -252,6 +239,19 @@
             app:layout_constraintEnd_toStartOf="@+id/button_show_password"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_signup_email_info" />
+
+        <TextView
+            android:id="@+id/text_signup_password_info"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="*En az 6 karakter ve rakam içermelidir."
+            android:textAlignment="textEnd"
+            android:textColor="@color/error_color"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input_signup_password" />
 
         <ImageButton
             android:id="@+id/button_show_password"

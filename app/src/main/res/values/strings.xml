@@ -4,4 +4,12 @@
     <string name="currency">TL</string>
     <string name="wait_for_access">Restoran tarafından onay bekleniyor...</string>
     <string name="order_code_share_info">Restoran tarafından onaylanmak için bu kodu garson ile paylaşınız!</string>
+    <string name="mail_empty_warning">Mail adresi boş</string>
+    <string name="password_below_required">Şifre kısa</string>
+    <string name="registered_successfully">Başarıyla kayıt olundu.</string>
+    <string name="registration_error">Kayıt olma işlemi sırasında hata meydana geldi.</string>
+    <string name="fill_all_text_inputs">Tüm alanları doldurunuz.</string>
+    <string name="signin_successfull">Başarıyla giriş yapıldı.</string>
+    <string name="signin_error">Giriş yaparken hata meydana geldi.</string>
+    <string name="user_is_manager">Restoran yöneticisi hesabıyla giriş yapmazsınız!</string>
 </resources>

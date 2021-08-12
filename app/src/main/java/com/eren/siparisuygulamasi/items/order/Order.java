@@ -1,7 +1,9 @@
 package com.eren.siparisuygulamasi.items.order;
 
-public class Order {
-    String name;
+import java.io.Serializable;
+
+public class Order implements Serializable {
+    public String name;
     int amount;
     float price;
     float total;
@@ -16,5 +18,14 @@ public class Order {
     public void setAmount(int amount) {
         this.amount = amount;
         total = price * amount;
+    }
+
+    public void increaseAmount() {
+        this.amount++;
+        total = price * amount;
+    }
+
+    public float getTotal(){
+        return total;
     }
 }
