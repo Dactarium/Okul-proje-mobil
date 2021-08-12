@@ -12,15 +12,14 @@ import android.widget.TextView;
 import androidx.appcompat.content.res.AppCompatResources;
 
 import com.eren.siparisuygulamasi.R;
-import com.eren.siparisuygulamasi.items.BtnClickListener;
 
 import java.util.ArrayList;
 
 public class MenuAdapter extends ArrayAdapter<Menu> {
-    private BtnClickListener mClickListener;
-    public MenuAdapter(Context context, ArrayList<Menu> menus, BtnClickListener listener){
+    private MenuButtonListener menuButtonListener;
+    public MenuAdapter(Context context, ArrayList<Menu> menus, MenuButtonListener listener){
         super(context, 0, menus);
-        mClickListener = listener;
+        menuButtonListener = listener;
     }
     public View getView(int position, View convertView, ViewGroup parent){
         Menu menu = getItem(position);
@@ -45,8 +44,8 @@ public class MenuAdapter extends ArrayAdapter<Menu> {
         add_menu_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(mClickListener != null){
-                    mClickListener.addToCart(menu.name, menu.price);
+                if(menuButtonListener != null){
+                    menuButtonListener.addToCart(menu.name, menu.price);
                 }
             }
         });

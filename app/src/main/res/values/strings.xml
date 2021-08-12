@@ -9,7 +9,25 @@
     <string name="registered_successfully">Başarıyla kayıt olundu.</string>
     <string name="registration_error">Kayıt olma işlemi sırasında hata meydana geldi.</string>
     <string name="fill_all_text_inputs">Tüm alanları doldurunuz.</string>
+    <string name="email_hint_text">E-posta adresinizi giriniz.</string>
+    <string name="password_hint_text">Şifre giriniz.</string>
+    <string name="name_hint_text">İsminizi giriniz.</string>
+    <string name="surname_hint_text">Soyisminizi giriniz.</string>
+    <string name="forgot_password">Şifrenizi mi unuttunuz?</string>
+    <string name="signin_button_text">Giriş Yap</string>
+    <string name="signup_button_text">Kayıt Ol</string>
     <string name="signin_successfull">Başarıyla giriş yapıldı.</string>
     <string name="signin_error">Giriş yaparken hata meydana geldi.</string>
     <string name="user_is_manager">Restoran yöneticisi hesabıyla giriş yapmazsınız!</string>
+    <string name="access_code_hint_text">Erişim kodunu giriniz.</string>
+    <string name="popup_menu_history_title">Geçmiş</string>
+    <string name="popup_menu_signout">Çıkış Yap</string>
+    <string name="leave_button_text">Bitir</string>
+    <string name="order_button_text">Sipariş ver</string>
+    <string name="order_alert_box_title">Sipariş ver!</string>
+    <string name="order_alert_box_msg">Siparişinizden emin misiniz?</string>
+    <string name="bill_alert_box_title">Hesabı iste!</string>
+    <string name="bill_alert_box_msg">Hesabı istediğinizden emin misiniz?</string>
+    <string name="yes">Evet</string>
+    <string name="no">Hayır</string>
 </resources>

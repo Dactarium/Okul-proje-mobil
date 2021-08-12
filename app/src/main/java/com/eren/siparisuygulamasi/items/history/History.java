@@ -1,13 +1,9 @@
 package com.eren.siparisuygulamasi.items.history;
 
-public class History {
-    public String date;
-    public String name;
-    public float total;
+import com.google.firebase.Timestamp;
 
-    public History(String access_code, String date, String name, float total){
-        this.date = date;
-        this.name = name;
-        this.total = total;
-    }
+public class History {
+    public Timestamp date;
+    public String restaurant_name;
+    public float total;
 }

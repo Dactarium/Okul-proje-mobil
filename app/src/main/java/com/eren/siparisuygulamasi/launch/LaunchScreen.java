@@ -3,10 +3,13 @@ package com.eren.siparisuygulamasi.launch;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import com.eren.siparisuygulamasi.R;
+import com.eren.siparisuygulamasi.accessed.InRestaurant;
 import com.eren.siparisuygulamasi.ready.Mainmenu;
+import com.eren.siparisuygulamasi.ready.WaitForAllow;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -36,11 +39,24 @@ public class LaunchScreen extends AppCompatActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
+                        Intent intent;
                         if(user == null){
-                            startActivity(new Intent(getApplicationContext(), SigninScreen.class));
+                            intent = new Intent(getApplicationContext(), SigninScreen.class);
                         }else{
-                            startActivity(new Intent(getApplicationContext(), Mainmenu.class));
+
+                            if(getLocalUserData("CURRENT_RESTAURANT_ACCESS_CODE") == null ){
+                                intent = new Intent(getApplicationContext(), Mainmenu.class);
+                            }else{
+                                if(!getLocalUserDataBoolean("IS_ALLOWED")){
+                                    intent = new Intent(getApplicationContext(), WaitForAllow.class);
+                                }else{
+                                    intent = new Intent(getApplicationContext(), InRestaurant.class);
+                                }
+                                intent.putExtra("RID", getLocalUserData("CURRENT_RESTAURANT_ID"));
+                            }
                         }
+
+                        startActivity(intent);
                         finish();
                         timer.cancel();
                     }
@@ -50,4 +66,23 @@ public class LaunchScreen extends AppCompatActivity {
 
 
     }
+
+    String getLocalUserData(String dataName){
+        String localUserData;
+
+        SharedPreferences sharedPreferences = getSharedPreferences("UserData", MODE_PRIVATE);
+        localUserData = sharedPreferences.getString(dataName, null);
+
+        return localUserData;
+    }
+
+    Boolean getLocalUserDataBoolean(String dataName){
+        Boolean localUserData;
+
+        SharedPreferences sharedPreferences = getSharedPreferences("UserData", MODE_PRIVATE);
+        localUserData = sharedPreferences.getBoolean(dataName, false);
+
+        return localUserData;
+    }
+
 }

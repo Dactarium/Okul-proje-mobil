@@ -12,10 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SiparişUygulaması">
         <activity android:name=".ready.WaitForAllow"></activity>
-        <activity android:name=".ready.Scan" />
         <activity android:name=".accessed.Cart" />
         <activity android:name=".accessed.InRestaurant" />
-        <activity android:name=".accessed.Orders" />
+        <activity android:name=".accessed.Bill" />
         <activity android:name=".ready.OrderHistory" />
         <activity android:name=".ready.Mainmenu" />
         <activity android:name=".launch.SigninScreen" />

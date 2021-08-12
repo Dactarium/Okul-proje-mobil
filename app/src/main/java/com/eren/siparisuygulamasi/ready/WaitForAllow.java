@@ -16,6 +16,7 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -28,6 +29,8 @@ public class WaitForAllow extends AppCompatActivity {
 
     FirebaseAuth mAuth;;
     FirebaseFirestore database;
+
+    Timer timer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,37 +48,61 @@ public class WaitForAllow extends AppCompatActivity {
         String order_code = sharedPreferences.getString("ORDER_CODE","");
 
         order_code_text.setText(order_code);
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
 
         DocumentReference docRef = database.collection("restaurants").document(rId).collection("customers").document(mAuth.getUid());
-
-        Timer timer = new Timer();
+        timer = new Timer();
         timer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
                 docRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                     @Override
                     public void onSuccess(DocumentSnapshot documentSnapshot) {
-                        User user = documentSnapshot.toObject(User.class);
+                        if(documentSnapshot.exists()) {
+                            User user = documentSnapshot.toObject(User.class);
 
-                        if(user.isAllowed){
-                            Intent intent = new Intent(getApplicationContext(), InRestaurant.class);
-                            intent.putExtra("RID", rId);
-                            startActivity(intent);
-                            finish();
-                            timer.cancel();
+                            if (user.isAllowed) {
+
+                                SharedPreferences sharedPreferences = getSharedPreferences("UserData", MODE_PRIVATE);
+                                SharedPreferences.Editor editor = sharedPreferences.edit();
+
+                                editor.putBoolean("IS_ALLOWED", true);
+
+                                editor.commit();
+
+                                Intent intent = new Intent(getApplicationContext(), InRestaurant.class);
+                                intent.putExtra("RID", rId);
+                                startActivity(intent);
+                                finish();
+                                timer.cancel();
+                            }
+                        }else{
+                            onBackPressed();
                         }
-
                     }
                 });
             }
         }, 0, 5000);
+    }
 
 
+    @Override
+    public void onBackPressed() {
+        timer.cancel();
 
+        DocumentReference docRef = database.collection("restaurants").document(rId).collection("customers").document(mAuth.getUid());
+
+        docRef.delete();
+
+        SharedPreferences sharedPreferences = getSharedPreferences("UserData", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        editor.putString("CURRENT_RESTAURANT_ACCESS_CODE", null);
+        editor.putString("CURRENT_RESTAURANT_ID", null);
+        editor.putBoolean("IS_ALLOWED", false);
+
+        editor.commit();
+
+        startActivity(new Intent(getApplicationContext(), Mainmenu.class));
+        finish();
     }
 }

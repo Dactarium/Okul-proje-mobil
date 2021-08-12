@@ -62,18 +62,18 @@
     </ListView>
 
     <View
-        android:id="@+id/background_total"
+        android:id="@+id/background_bill_total"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="10dp"
         android:background="@drawable/box_right"
-        app:layout_constraintBottom_toBottomOf="@+id/text_currency"
-        app:layout_constraintEnd_toEndOf="@+id/text_currency"
+        app:layout_constraintBottom_toBottomOf="@+id/text_bill_currency"
+        app:layout_constraintEnd_toEndOf="@+id/text_bill_currency"
         app:layout_constraintStart_toStartOf="@+id/button_bill"
-        app:layout_constraintTop_toTopOf="@+id/text_currency" />
+        app:layout_constraintTop_toTopOf="@+id/text_bill_currency" />
 
     <TextView
-        android:id="@+id/text_currency"
+        android:id="@+id/text_bill_currency"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
@@ -84,20 +84,20 @@
         android:text="@string/currency"
         android:textColor="@color/text_color"
         app:layout_constraintBottom_toBottomOf="@+id/button_bill"
-        app:layout_constraintStart_toEndOf="@+id/text_total"
+        app:layout_constraintStart_toEndOf="@+id/text_bill_total"
         app:layout_constraintTop_toTopOf="@+id/button_bill" />
 
     <TextView
-        android:id="@+id/text_total"
+        android:id="@+id/text_bill_total"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:fontFamily="sans-serif-light"
-        android:text="0"
+        android:text="0.0"
         android:textColor="@color/text_color"
-        app:layout_constraintBottom_toBottomOf="@+id/text_currency"
+        app:layout_constraintBottom_toBottomOf="@+id/text_bill_currency"
         app:layout_constraintStart_toEndOf="@+id/button_bill"
-        app:layout_constraintTop_toTopOf="@+id/text_currency" />
+        app:layout_constraintTop_toTopOf="@+id/text_bill_currency" />
 
     <ImageButton
         android:id="@+id/button_bill"
@@ -107,6 +107,7 @@
         android:layout_marginBottom="25dp"
         android:background="@drawable/button"
         android:padding="15dp"
+        app:tint="@color/text_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/ic_wallet" />
@@ -141,8 +142,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="5dp"
+        android:fontFamily="sans-serif-light"
         android:paddingLeft="10dp"
-        android:text="0"
+        android:text="0.0"
         android:textColor="@color/text_color"
         app:layout_constraintBottom_toBottomOf="@+id/text_cart_currency"
         app:layout_constraintEnd_toStartOf="@+id/text_cart_currency"
@@ -156,6 +158,7 @@
         android:layout_marginBottom="25dp"
         android:background="@drawable/button"
         android:padding="15dp"
+        app:tint="@color/text_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/ic_cart" />

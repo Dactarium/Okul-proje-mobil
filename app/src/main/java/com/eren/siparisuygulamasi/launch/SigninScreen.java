@@ -7,10 +7,14 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.InputType;
 import android.text.TextUtils;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -38,6 +42,8 @@ public class SigninScreen extends AppCompatActivity {
     Button signin_button;
     Button signup_button;
 
+    ImageButton show_password_button;
+
     TextView signin_info_text;
     TextView signin_title_text;
     TextView signup_text;
@@ -57,7 +63,7 @@ public class SigninScreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login_screen);
+        setContentView(R.layout.activity_signin_screen);
 
         mAuth = FirebaseAuth.getInstance();
         database = FirebaseFirestore.getInstance();
@@ -67,6 +73,7 @@ public class SigninScreen extends AppCompatActivity {
 
         signin_button = (Button) findViewById(R.id.button_signin);
         signup_button = (Button) findViewById(R.id.button_signup);
+        show_password_button = (ImageButton) findViewById(R.id.button_show_password);
 
         signin_info_text = (TextView) findViewById(R.id.text_signin_info);
         signin_title_text = (TextView) findViewById(R.id.text_signin_title);
@@ -94,6 +101,22 @@ public class SigninScreen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 signupUser();
+            }
+        });
+
+        show_password_button.setOnClickListener(new View.OnClickListener() {
+            Boolean isHide = false;
+            @Override
+            public void onClick(View v) {
+                if(isHide){
+                    signup_password_input.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    isHide = false;
+                }
+                else{
+                    signup_password_input.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                    isHide = true;
+                }
+
             }
         });
 
@@ -183,10 +206,26 @@ public class SigninScreen extends AppCompatActivity {
                 if(task.isSuccessful()){
                     Toast.makeText(SigninScreen.this, getString(R.string.signin_successfull), Toast.LENGTH_SHORT).show();
 
-                    setLocalUserDatas(email);
+                    DocumentReference customerRef = database.collection("customers").document(email);
+                    customerRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                        @Override
+                        public void onSuccess(DocumentSnapshot documentSnapshot) {
+                            User user = documentSnapshot.toObject(User.class);
 
-                    startActivity(new Intent(getApplicationContext(), Mainmenu.class));
-                    finish();
+                            SharedPreferences sharedPreferences = getSharedPreferences("UserData",MODE_PRIVATE);
+                            SharedPreferences.Editor editPrefences = sharedPreferences.edit();
+
+                            editPrefences.putString("EMAIL", email);
+                            editPrefences.putString("NAME",user.name);
+                            editPrefences.putString("SURNAME",user.surname);
+                            editPrefences.commit();
+
+                            startActivity(new Intent(getApplicationContext(), Mainmenu.class));
+                            finish();;
+                        }
+                    });
+
+
                 }else{
                     Toast.makeText(SigninScreen.this, getString(R.string.signin_error), Toast.LENGTH_SHORT).show();
                 }
@@ -195,7 +234,6 @@ public class SigninScreen extends AppCompatActivity {
     }
 
     private void createDoc(String name, String surname, String email){
-        String email_lower = email.toLowerCase();
         String uid = mAuth.getUid();
 
         CollectionReference customers = database.collection("customers");
@@ -209,24 +247,6 @@ public class SigninScreen extends AppCompatActivity {
         customers.document(email).set(data);
     }
 
-    private void setLocalUserDatas(String email){
-        DocumentReference customerRef = database.collection("customers").document(email);
-        customerRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-            @Override
-            public void onSuccess(DocumentSnapshot documentSnapshot) {
-                User user = documentSnapshot.toObject(User.class);
 
-                SharedPreferences sharedPreferences = getSharedPreferences("UserData",MODE_PRIVATE);
-                SharedPreferences.Editor editPrefences = sharedPreferences.edit();
-
-                editPrefences.putString("EMAIL", email);
-                editPrefences.putString("NAME",user.name);
-                editPrefences.putString("SURNAME",user.surname);
-                editPrefences.commit();
-            }
-        });
-
-
-    }
 
 }

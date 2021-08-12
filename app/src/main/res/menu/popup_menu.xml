@@ -2,16 +2,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <item
-        android:id="@+id/settings"
-        android:title="Ayarlar" />
-
-    <item
         android:id="@+id/history"
-        android:title="Geçmiş"/>
+        android:title="@string/popup_menu_history_title" />
 
     <item
         android:id="@+id/signout"
-        android:title="Çıkış Yap"/>
+        android:title="@string/popup_menu_signout" />
 
 
 </menu>

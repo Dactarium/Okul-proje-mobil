@@ -38,7 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:text="@string/order_code_share_info"
-        android:textColor="@color/error_color"
+        android:textColor="@color/hint_text_color"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
