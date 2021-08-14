@@ -167,6 +167,7 @@ public class Mainmenu extends AppCompatActivity {
                     data.put("name", username);
                     data.put("order_code",orderCode);
                     data.put("status","Onay bekliyor");
+                    data.put("note","");
 
                     customers.document(uid).set(data);
 
